@@ -1,2 +1,5 @@
 User-agent: *
-Sitemap: http://localhost:1313/sitemap.xml
+
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /404.html
