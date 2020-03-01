@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on pird&#39;s blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://pirdboy.github.io/tags/</link>
     <description>Recent content in Tags on pird&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,17 +11,17 @@
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 27 Feb 2020 01:10:53 +0800</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://pirdboy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>iOS</title>
-        <link>http://localhost:1313/tags/ios/</link>
+        <link>https://pirdboy.github.io/tags/ios/</link>
         <pubDate>Thu, 27 Feb 2020 01:10:53 +0800</pubDate>
         <author>cqu_shihongyu@foxmail.com (pird)</author>
-        <guid>http://localhost:1313/tags/ios/</guid>
+        <guid>https://pirdboy.github.io/tags/ios/</guid>
         <description></description>
       </item>
       

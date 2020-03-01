@@ -3,148 +3,148 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/ko/archive/</loc>
+    <loc>https://pirdboy.github.io/ko/archive/</loc>
     <lastmod>2019-10-19T11:44:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/archive/"
+                href="https://pirdboy.github.io/archive/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/archive/"
+                href="https://pirdboy.github.io/ko/archive/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/about/</loc>
+    <loc>https://pirdboy.github.io/ko/about/</loc>
     <lastmod>2019-10-09T11:44:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/about/"
+                href="https://pirdboy.github.io/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/about/"
+                href="https://pirdboy.github.io/ko/about/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/</loc>
+    <loc>https://pirdboy.github.io/ko/</loc>
     <lastmod>2019-10-09T11:44:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="https://pirdboy.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/"
+                href="https://pirdboy.github.io/ko/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/gallery/</loc>
+    <loc>https://pirdboy.github.io/ko/gallery/</loc>
     <lastmod>2018-10-12T10:20:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/gallery/"
+                href="https://pirdboy.github.io/gallery/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/gallery/"
+                href="https://pirdboy.github.io/ko/gallery/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/gallery/photo/</loc>
+    <loc>https://pirdboy.github.io/ko/gallery/photo/</loc>
     <lastmod>2018-10-12T10:20:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/gallery/photo/"
+                href="https://pirdboy.github.io/gallery/photo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/gallery/photo/"
+                href="https://pirdboy.github.io/ko/gallery/photo/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/gallery/cartoon/</loc>
+    <loc>https://pirdboy.github.io/ko/gallery/cartoon/</loc>
     <lastmod>2018-10-11T10:20:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/gallery/cartoon/"
+                href="https://pirdboy.github.io/gallery/cartoon/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/gallery/cartoon/"
+                href="https://pirdboy.github.io/ko/gallery/cartoon/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/categories/</loc>
+    <loc>https://pirdboy.github.io/ko/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="https://pirdboy.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/categories/"
+                href="https://pirdboy.github.io/ko/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/posts/</loc>
+    <loc>https://pirdboy.github.io/ko/posts/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/"
+                href="https://pirdboy.github.io/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/posts/"
+                href="https://pirdboy.github.io/ko/posts/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/series/</loc>
+    <loc>https://pirdboy.github.io/ko/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/series/"
+                href="https://pirdboy.github.io/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/series/"
+                href="https://pirdboy.github.io/ko/series/"
                 />
   </url>
   
   <url>
-    <loc>http://localhost:1313/ko/tags/</loc>
+    <loc>https://pirdboy.github.io/ko/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="https://pirdboy.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://localhost:1313/ko/tags/"
+                href="https://pirdboy.github.io/ko/tags/"
                 />
   </url>
   

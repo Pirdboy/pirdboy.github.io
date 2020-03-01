@@ -1,6 +1,6 @@
 [
 {
-	"uri": "http://localhost:1313/showcase/hugo/hugo-theme-zzo/",
+	"uri": "https://pirdboy.github.io/showcase/hugo/hugo-theme-zzo/",
 	"title": "Hugo Zzo Theme",
 	"tags": [],
 	"categories": [],
@@ -9,7 +9,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/showcase/hugo/hugo-theme-zdoc/",
+	"uri": "https://pirdboy.github.io/showcase/hugo/hugo-theme-zdoc/",
 	"title": "Hugo zDoc Theme",
 	"tags": [],
 	"categories": [],
@@ -18,7 +18,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/",
+	"uri": "https://pirdboy.github.io/",
 	"title": "",
 	"tags": [],
 	"categories": [],
@@ -27,7 +27,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/categories/",
+	"uri": "https://pirdboy.github.io/categories/",
 	"title": "Categories",
 	"tags": [],
 	"categories": [],
@@ -36,7 +36,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/tags/ios/",
+	"uri": "https://pirdboy.github.io/tags/ios/",
 	"title": "iOS",
 	"tags": [],
 	"categories": [],
@@ -45,7 +45,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/posts/ios-duplicate-symbol/",
+	"uri": "https://pirdboy.github.io/posts/ios-duplicate-symbol/",
 	"title": "iOS 静态库冲突duplicate symbol解决方案",
 	"tags": ["iOS"],
 	"categories": [],
@@ -54,7 +54,7 @@
 	"content": "最近接手别人的iOS项目，Pods里的 libGCDWebServer.a 与一个名叫 UPSDK.framework 的库文件冲突，报duplicate symbol错误。\n解决方案就是从UPSDK中删除静态库中重复的.o文件，会用到lipo、ar、libtool这三个命令。当然也可以从 libGCDWebServer.a 中删除，不过不建议修改Pods里的内容。熟悉shell语法的可以直接看第六步\n先创建一个目录来存放要处理的文件\n目录结构：\n1 2 3 4  |- your_directory |- libGCDWebServer.a |- UPSDK.framework |- output # 存放提取的文件   一、lipo命令查看库文件信息 1  lipo -info UPSDK.framework/UPSDK   输出内容：Architectures in the fat file: UPSDK are: armv7 i386 x86_64 arm64，说明我们的库文件是支持多个CPU架构的fat文件，需要对每一个CPU架构的静态库单独处理，然后再合并。\n二、lipo命令提取单个CPU架构的静态库 提取armv7架构的库，得到UPSDK-armv7\n1 2  # 提取armv7的库 lipo UPSDK.framework/UPSDK -thin armv7 -o output/UPSDK-armv7   三、ar命令删除重复的.o 有两种方案：\n 通过 ar -x 将UPSDK-armv7里的 .o 提取到当前目录，删除重复的 .o，再用 ar rcs 打包一个新的库文件。 可以直接用 ar -d 从UPSDK-armv7中删除 .o，不需要从库文件提取 .o。  这里选用第二种方案。注意两点：\n ar 命令只能用于单个CPU平台的静态库 不要删除__.SYMDEF  1 2 3 4  lipo libGCDWebServer.a -thin armv7 output/libGCDWebServer.a.temp ar -d output/UPSDK-armv7 \\  `ar -t output/libGCDWebServer.a.temp | grep -v __.SYMDEF`   执行过后，UPSDK-armv7里就去掉了与libGCDWebServer.a重复的 .o文件。\n四、按上述方式对arm64、x86_64等进行处理 五、合并得到新的静态库 1 2 3 4 5  libtool output/UPSDK-armv7 \\ \toutput/UPSDK-i386 \\ \toutput/UPSDK-x86_64 \\ \toutput/UPSDK-arm64 \\ \t-o output/UPSDK-new   最终的 UPSDK-new 就是我们需要的静态库，替换掉 UPSDK.framework/UPSDK 即可。\n使用 lipo -create 也可以得到合并后的静态库。区别在于libtool要合并的文件不能有两个CPU架构相同的静态库（没有验证过）。另外，Xcode生成静态库用的 libtool 。\n六、完整步骤的shell脚本 每个CPU架构静态库的处理方式完全一样，可以用脚本处理。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  #!/bin/sh # 删除UPSDK中与libGCDWebServer.a重复的.o # |- current_directory # |- libGCDWebServer.a # |- UPSDK.framework output_dir=\u0026#34;output\u0026#34; src_lib=\u0026#34;libGCDWebServer.a\u0026#34; exclude_file=\u0026#34;__.SYMDEF\u0026#34; arch_types=(\u0026#34;armv7\u0026#34; \u0026#34;i386\u0026#34; \u0026#34;x86_64\u0026#34; \u0026#34;arm64\u0026#34;) # create output directory mkdir -p ${output_dir} lipo ${src_lib} -thin armv7 -o \u0026#34;${src_lib}.temp\u0026#34; # remove duplicate .o files for each thin file for arch in ${arch_types[@]};do lipo UPSDK.framework/UPSDK -thin \u0026#34;${arch}\u0026#34; -o \u0026#34;${output_dir}/UPSDK-${arch}\u0026#34; ar -d \u0026#34;${output_dir}/UPSDK-${arch}\u0026#34; `ar -t \u0026#34;${src_lib}.temp\u0026#34; | grep -v ${exclude_file}` done # generate new fat file libtool ${output_dir}/UPSDK-armv7 \\ \t${output_dir}/UPSDK-i386 \\ \t${output_dir}/UPSDK-x86_64 \\ \t${output_dir}/UPSDK-arm64 \\ \t-o ${output_dir}/UPSDK-new rm -f \u0026#34;${src_lib}.temp\u0026#34;   "
 },
 {
-	"uri": "http://localhost:1313/posts/",
+	"uri": "https://pirdboy.github.io/posts/",
 	"title": "Posts",
 	"tags": ["index"],
 	"categories": [],
@@ -63,7 +63,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/tags/",
+	"uri": "https://pirdboy.github.io/tags/",
 	"title": "Tags",
 	"tags": [],
 	"categories": [],
@@ -72,7 +72,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/",
+	"uri": "https://pirdboy.github.io/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/",
 	"title": "移动开发",
 	"tags": [],
 	"categories": [],
@@ -81,7 +81,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/showcase/hugo/",
+	"uri": "https://pirdboy.github.io/showcase/hugo/",
 	"title": "Hugo",
 	"tags": [],
 	"categories": [],
@@ -90,7 +90,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/showcase/",
+	"uri": "https://pirdboy.github.io/showcase/",
 	"title": "Showcase overview",
 	"tags": [],
 	"categories": [],
@@ -99,7 +99,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/gallery/cartoon/",
+	"uri": "https://pirdboy.github.io/gallery/cartoon/",
 	"title": "Cartoon",
 	"tags": [],
 	"categories": [],
@@ -108,7 +108,7 @@
 	"content": "Sample images from Pixabay\n"
 },
 {
-	"uri": "http://localhost:1313/gallery/",
+	"uri": "https://pirdboy.github.io/gallery/",
 	"title": "Galleries",
 	"tags": [],
 	"categories": [],
@@ -117,7 +117,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/gallery/photo/",
+	"uri": "https://pirdboy.github.io/gallery/photo/",
 	"title": "Photo",
 	"tags": [],
 	"categories": [],
@@ -126,7 +126,7 @@
 	"content": "Sample images from Pixabay\n"
 },
 {
-	"uri": "http://localhost:1313/pt/dir/fourth/",
+	"uri": "https://pirdboy.github.io/pt/dir/fourth/",
 	"title": "Fourth",
 	"tags": [""],
 	"categories": [],
@@ -135,7 +135,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/pt/",
+	"uri": "https://pirdboy.github.io/pt/",
 	"title": "Presentations",
 	"tags": [],
 	"categories": [],
@@ -144,7 +144,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/series/",
+	"uri": "https://pirdboy.github.io/series/",
 	"title": "Series",
 	"tags": [],
 	"categories": [],
@@ -153,7 +153,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/pt/third/",
+	"uri": "https://pirdboy.github.io/pt/third/",
 	"title": "Third",
 	"tags": [""],
 	"categories": [],
@@ -162,7 +162,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/pt/second/",
+	"uri": "https://pirdboy.github.io/pt/second/",
 	"title": "Second",
 	"tags": [""],
 	"categories": [],
@@ -171,7 +171,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/pt/first/",
+	"uri": "https://pirdboy.github.io/pt/first/",
 	"title": "First",
 	"tags": [""],
 	"categories": [],
@@ -180,7 +180,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/archive/",
+	"uri": "https://pirdboy.github.io/archive/",
 	"title": "Archive",
 	"tags": [],
 	"categories": [],
@@ -189,7 +189,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/about/",
+	"uri": "https://pirdboy.github.io/about/",
 	"title": "About",
 	"tags": [],
 	"categories": [],

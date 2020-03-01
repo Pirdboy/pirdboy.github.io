@@ -539,14 +539,14 @@
   
     var baseurl = null;
     
-    var siteBaseURL = JSON.parse("\"http://localhost:1313\"");
+    var siteBaseURL = JSON.parse("\"https://pirdboy.github.io\"");
     var siteBaseChecker = /\/\w+\//i;
     var isSlug = siteBaseChecker.test(siteBaseURL);
     var isThemeSite = location.origin.includes('themes.gohugo.io');
 
     
         if (isThemeSite) {
-          baseurl = "http:\/\/localhost:1313\/ko";
+          baseurl = "https:\/\/pirdboy.github.io\/ko";
         } else {
           var hasLangPostfix = location.pathname.includes("/ko");
           if (hasLangPostfix) {
@@ -905,7 +905,7 @@
 
 <meta property="og:site_name" content="Hugo Zzo Theme">
 <meta property="og:title" content="About">
-<meta property="og:url" content="http://localhost:1313/ko/about/">
+<meta property="og:url" content="https://pirdboy.github.io/ko/about/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="About Page">
 
@@ -913,7 +913,7 @@
 <meta name="generator" content="Hugo 0.63.2" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="http://localhost:1313/ko/about/">
+<link rel="canonical" href="https://pirdboy.github.io/ko/about/">
 <link rel="manifest" href="/manifest.json">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
@@ -940,16 +940,16 @@
     "headline": "About",
     "datePublished": "2019-10-09T11:44:14+09:00",
     "dateModified": "2019-10-09T11:44:14+09:00",
-    "url" : "http://localhost:1313/ko/about/",
+    "url" : "https://pirdboy.github.io/ko/about/",
     "description": "About Page",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http://localhost:1313"
+      "@id": "https://pirdboy.github.io"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Hugo Zzo Theme",
-      "url": "http://localhost:1313"
+      "url": "https://pirdboy.github.io"
     }
   }
 </script>

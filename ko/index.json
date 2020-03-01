@@ -1,6 +1,6 @@
 [
 {
-	"uri": "http://localhost:1313/ko/archive/",
+	"uri": "https://pirdboy.github.io/ko/archive/",
 	"title": "Archive",
 	"tags": [],
 	"categories": [],
@@ -9,7 +9,7 @@
 	"content": "archive page\n"
 },
 {
-	"uri": "http://localhost:1313/ko/about/",
+	"uri": "https://pirdboy.github.io/ko/about/",
 	"title": "About",
 	"tags": [],
 	"categories": [],
@@ -18,7 +18,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/",
+	"uri": "https://pirdboy.github.io/ko/",
 	"title": "Hugo Zzo Theme",
 	"tags": [],
 	"categories": [],
@@ -27,7 +27,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/gallery/",
+	"uri": "https://pirdboy.github.io/ko/gallery/",
 	"title": "Galleries",
 	"tags": [],
 	"categories": [],
@@ -36,7 +36,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/gallery/photo/",
+	"uri": "https://pirdboy.github.io/ko/gallery/photo/",
 	"title": "Photo",
 	"tags": [],
 	"categories": [],
@@ -45,7 +45,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/gallery/cartoon/",
+	"uri": "https://pirdboy.github.io/ko/gallery/cartoon/",
 	"title": "Cartoon",
 	"tags": [],
 	"categories": [],
@@ -54,7 +54,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/categories/",
+	"uri": "https://pirdboy.github.io/ko/categories/",
 	"title": "Categories",
 	"tags": [],
 	"categories": [],
@@ -63,7 +63,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/posts/",
+	"uri": "https://pirdboy.github.io/ko/posts/",
 	"title": "Posts",
 	"tags": ["index"],
 	"categories": [],
@@ -72,7 +72,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/series/",
+	"uri": "https://pirdboy.github.io/ko/series/",
 	"title": "Series",
 	"tags": [],
 	"categories": [],
@@ -81,7 +81,7 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/ko/tags/",
+	"uri": "https://pirdboy.github.io/ko/tags/",
 	"title": "Tags",
 	"tags": [],
 	"categories": [],

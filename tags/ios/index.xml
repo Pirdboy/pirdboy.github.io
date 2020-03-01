@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iOS on pird&#39;s blog</title>
-    <link>http://localhost:1313/tags/ios/</link>
+    <link>https://pirdboy.github.io/tags/ios/</link>
     <description>Recent content in iOS on pird&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,17 +11,17 @@
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 27 Feb 2020 01:10:53 +0800</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://pirdboy.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>iOS 静态库冲突duplicate symbol解决方案</title>
-        <link>http://localhost:1313/posts/ios-duplicate-symbol/</link>
+        <link>https://pirdboy.github.io/posts/ios-duplicate-symbol/</link>
         <pubDate>Thu, 27 Feb 2020 01:10:53 +0800</pubDate>
         <author>cqu_shihongyu@foxmail.com (pird)</author>
-        <guid>http://localhost:1313/posts/ios-duplicate-symbol/</guid>
+        <guid>https://pirdboy.github.io/posts/ios-duplicate-symbol/</guid>
         <description>最近接手别人的iOS项目，Pods里的 libGCDWebServer.a 与一个名叫 UPSDK.framework 的库文件冲突，报duplicate symbol错误。 解决方案就是从UPSDK中删除静态库</description>
       </item>
       
